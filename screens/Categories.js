@@ -4,19 +4,22 @@ import { StyleSheet, FlatList } from "react-native";
 import CategoryListItem from '../components/CategoryListItem'
 export default class Categories extends React.Component
 {
-    constructor(props)
-    {
-        super(props);
-        this.state = {
-            categories: [
-                { id: 1, name: 'facebook', url: 'https://fb.com/kynotalkallaction' },
-                { id: 2, name: 'instagram', url: 'https://www.instagram.com/kynotalkallaction/' },
-                { id: 3, name: 'pinterest', url: 'https://www.pinterest.ca/phamtrungky19032000/_created/'},
-                { id: 3, name: 'zalo', url: '#' },
-                { id: 3, name: 'telegram', url: '#'}
-            ]
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: [
+        { id: 1, name: "facebook" },
+        { id: 2, name: "youtube" },
+        { id: 3, name: "zalo" },
+        { id: 4, name: "instagram" },
+        { id: 5, name: "telegram" },
+        { id: 6, name: "pinterest" },
+        { id: 7, name: "gmail" },
+        { id: 8, name: "coding" },
+        { id: 9, name: "travel" },
+      ],
+    };
+  }
     render ()
     {
       const { categories } = this.state;
