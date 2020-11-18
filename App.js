@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet,ScrollView, FlatList} from "react-native";
 import CategoryListItem from './components/CategoryListItem';
 
 export default class App extends React.Component {
@@ -14,19 +14,25 @@ export default class App extends React.Component {
             { id: 4, name: "instagram" },
             { id: 5, name: "telegram" },
             { id: 6, name: "pinterest" },
+            { id: 7, name: "gmail" },
+            { id: 8, name: "coding" },
+            { id: 9, name: "travel" },
           ],
         };
     }
     render ()
     {
         const { categories } = this.state;
-         return (
-           <FlatList
-             data={categories}
-             renderItem={({ item }) => <CategoryListItem category={item} />}
-                 keyExtractor={(item) => "${item.id}"}
-                 contentContainerStyle = {styles.scrollView}
-           />
+        return (
+            
+           <ScrollView>
+             <FlatList
+               data={categories}
+               renderItem={({ item }) => <CategoryListItem category={item} />}
+               keyExtractor={(item) => "${item.id}"}
+               contentContainerStyle={styles.scrollView}
+             />
+           </ScrollView>
          );
     }
   
@@ -44,6 +50,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     paddingRight: 16,
-    paddingLeft: 16,
-  },
+    paddingLeft: 16
+  }
 });
