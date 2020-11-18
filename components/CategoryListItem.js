@@ -4,8 +4,8 @@ import LogoImage from '../assets/images/logo.png';
 
 export default function CategoryListItem(props) {
   return (
-    <View>
-      <Image style={styles.logoImage} source={LogoImage}/>
+    <View style={styles.container}>
+          <Image style={styles.logoImage} source={LogoImage}/>
       <Text style={styles.title}>®Alright by Trung Ky</Text>
     </View>
   );
@@ -20,15 +20,16 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.3,
     shadowRadius: 10,
+    elevation: 1,
     shadowOffset: { width: 0, height: 0 },
     marginBottom: 16,
   },
   logoImage: {
-    width: 128,
+    width: 150,
     height: 40,
   },
   title: {
     textTransform: "uppercase",
     fontWeight: "700",
-  }
+  },
 });
