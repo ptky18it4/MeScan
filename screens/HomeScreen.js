@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-
+import { Button, Text, View, StyleSheet, ScrollView, FlatList  } from 'react-native';
+import CategoryListItem from '../components/CategoryListItem'
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>You have (undefined) friends.</Text>
+        <Text>Home Screen.</Text>
 
         <Button
           title="Add some friends"

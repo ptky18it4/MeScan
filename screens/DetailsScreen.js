@@ -5,7 +5,7 @@ class DetailsScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Add friends here!</Text>
+        <Text>Details Screen</Text>
 
         <Button
           title="Back to home"
