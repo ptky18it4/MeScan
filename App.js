@@ -1,31 +1,32 @@
 import React from "react";
-import { StyleSheet, Text,ScrollView, View } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
+import CategoryListItem from './components/CategoryListItem';
 
-import CategoryListItem from './components/CategoryListItem'
 export default class App extends React.Component {
-    render() {
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+          categories: [
+            { id: 1, name: "facebook" },
+            { id: 2, name: "youtube" },
+            { id: 3, name: "zalo" },
+            { id: 4, name: "instagram" },
+            { id: 5, name: "telegram" },
+            { id: 6, name: "pinterest" },
+          ],
+        };
+    }
+    render ()
+    {
+        const { categories } = this.state;
          return (
-           <View>
-             <ScrollView style={styles.scrollView}>
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-               <CategoryListItem />
-             </ScrollView>
-           </View>
+           <FlatList
+             data={categories}
+             renderItem={({ item }) => <CategoryListItem category={item} />}
+                 keyExtractor={(item) => "${item.id}"}
+                 contentContainerStyle = {styles.scrollView}
+           />
          );
     }
   
